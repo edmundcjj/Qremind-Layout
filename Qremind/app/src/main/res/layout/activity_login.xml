@@ -65,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView5"
-        android:src="@mipmap/Qremind_Logo"
-        android:layout_marginTop="75dp"
+        android:src="@drawable/Qremind_Logo"
         android:layout_alignTop="@+id/log_in"
         android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

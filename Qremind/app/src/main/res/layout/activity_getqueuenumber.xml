@@ -32,6 +32,7 @@
         android:id="@+id/getqueueno_from_vendor"
         android:layout_above="@+id/paxnumber_editText"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="50dp"
+        android:text="Vendor Name"/>
 
 </RelativeLayout>
