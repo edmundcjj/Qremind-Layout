@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:background="#efefef">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="No. of people in Queue"
+        android:id="@+id/peoplenum_textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/peoplenum_editText"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/peoplenum_editText"
+        android:layout_above="@+id/peopleserved_textView"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="No. of people served"
+        android:id="@+id/peopleserved_textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/peopleserved_editText"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/peopleserved_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/currentqueue_textView"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Current Queue No."
+        android:id="@+id/currentqueue_textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/currentqueue_editText"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentqueue_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/nxtcustomerbtn"
+        android:layout_alignLeft="@+id/peopleserved_editText"
+        android:layout_alignStart="@+id/peopleserved_editText"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/nxtcustomerbtn"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/queuerequestextention_textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        android:background="#02bbd2"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Queue no request for time extension"
+        android:id="@+id/queuerequestextention_textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/queuerequestextension_editText"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/queuerequestextension_editText"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/allowextensionbtn"
+        android:layout_alignLeft="@+id/currentqueue_editText"
+        android:layout_alignStart="@+id/currentqueue_editText"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allow"
+        android:id="@+id/allowextensionbtn"
+        android:layout_gravity="center_horizontal"
+        android:background="#02bbd2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"/>
+</RelativeLayout>

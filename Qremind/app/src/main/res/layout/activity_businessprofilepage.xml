@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1"
+                android:background="#efefef">
+
+    <ImageView
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/vendor_picture"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.43"
+        android:layout_marginBottom="37dp"
+        android:layout_above="@+id/shopname_textview"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ShopName_editText"
+        android:hint="@string/vendor_name"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/category_textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Category_editText"
+        android:hint="@string/vendor_category"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/location_textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Location_editText"
+        android:hint="@string/vendor_location"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/email_textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Email_editText"
+        android:hint="@string/vendor_email"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/telephone_textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Telephone_editText"
+        android:hint="@string/vendor_number"
+        android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/savebtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/savebtn"
+        android:layout_gravity="center_horizontal"
+        android:background="#02bbd2"
+        android:clickable="true"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Shop Name"
+        android:id="@+id/shopname_textview"
+        android:layout_above="@+id/ShopName_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Category"
+        android:id="@+id/category_textView"
+        android:layout_above="@+id/Category_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Location"
+        android:id="@+id/location_textView"
+        android:layout_above="@+id/Location_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Email"
+        android:id="@+id/email_textView"
+        android:layout_above="@+id/Email_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Telephone"
+        android:id="@+id/telephone_textView"
+        android:layout_above="@+id/Telephone_editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+</RelativeLayout>

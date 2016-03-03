@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Qremind</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email/Hp No</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Log In</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="vendor_name">Enter vendor name</string>
+    <string name="vendor_category">Enter shop category</string>
+    <string name="vendor_location">Enter shop location</string>
+    <string name="vendor_email">something@xxxxx.com</string>
+    <string name="vendor_number">Enter shop phone number</string>
+    <string name="register_fname">Enter first name</string>
+    <string name="register_lname">Enter last name</string>
+    <string name="register_number">Enter phone number</string>
+    <string name="register_email">something@xxxxx.com</string>
+    <string name="register_password">Enter your password</string>
+    <string name="register_confirmpassword">Confirm Password</string>
+    <string name="customer_name">Enter yout name</string>
+    <string name="customer_password">Enter your password</string>
+    <string name="customer_number">Enter phone number</string>
+    <string name="customer_email">something@xxxxx.com</string>
+    <string name="pax_number">No. of pax</string>
+</resources>

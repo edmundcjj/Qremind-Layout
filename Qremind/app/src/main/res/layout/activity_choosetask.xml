@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#efefef">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Queue"
+        android:id="@+id/managequeuebtn"
+        android:layout_gravity="center_horizontal"
+        android:background="#02bbd2"
+        android:layout_marginLeft="59dp"
+        android:layout_marginStart="59dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/settingsbtn"
+        android:layout_gravity="center_horizontal"
+        android:background="#02bbd2"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/managequeuebtn"
+        android:layout_toEndOf="@+id/managequeuebtn"
+        android:layout_marginLeft="67dp"
+        android:layout_marginStart="67dp"/>
+</RelativeLayout>
