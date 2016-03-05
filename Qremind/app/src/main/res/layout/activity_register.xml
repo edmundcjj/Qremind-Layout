@@ -6,10 +6,8 @@
               android:background="#efefef">
 
     <ScrollView
-        android:id="@+id/log_in"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/action_sign_in">
+        android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -18,21 +16,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/FirstName_editText"
-                android:hint="@string/register_fname"
+                android:hint="@string/hint_fname"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/fname_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:maxLines="1"
+                android:inputType="text" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/LastName_editText"
-                android:hint="@string/register_lname"
+                android:hint="@string/hint_lname"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/lname_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:maxLines="1"
+                android:inputType="text" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -40,53 +42,60 @@
                 android:inputType="phone"
                 android:ems="10"
                 android:id="@+id/Phone_editText"
-                android:hint="@string/register_number"
+                android:hint="@string/hint_phone_no"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/phonenumber_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:phoneNumber="true"
+                android:maxLines="1" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textEmailAddress|text"
                 android:ems="10"
                 android:id="@+id/Email_editText"
-                android:hint="@string/register_email"
+                android:hint="@string/hint_email"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/email_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:maxLines="1" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberPassword"
                 android:ems="10"
                 android:id="@+id/Password_editText"
-                android:hint="@string/register_password"
+                android:hint="@string/hint_password"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/password_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:password="true"
+                android:maxLines="1"
+                android:inputType="text" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberPassword"
                 android:ems="10"
                 android:id="@+id/ConfirmPassword_editText"
-                android:hint="@string/register_confirmpassword"
+                android:hint="@string/hint_confirmpassword"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/confirmpassword_textView"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
+                android:layout_alignParentStart="true"
+                android:password="true"
+                android:maxLines="1"
+                android:inputType="text" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="First Name"
+                android:text="@string/text_first_name"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/fname_textView"
@@ -99,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Last Name"
+                android:text="@string/text_last_name"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/lname_textView"
@@ -111,7 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Phone Number"
+                android:text="@string/text_phone_no"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/phonenumber_textView"
@@ -123,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Email"
+                android:text="@string/text_email"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/email_textView"
@@ -135,7 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Password"
+                android:text="@string/text_password"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/password_textView"
@@ -147,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Confirm Password"
+                android:text="@string/text_confimed_pwd"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/confirmpassword_textView"
@@ -159,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Role"
+                android:text="@string/text_role"
                 android:textSize="20sp"
                 android:textColor="@color/black"
                 android:id="@+id/roleRadioGroup_textView"
@@ -167,7 +176,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
 
-            <RadioGroup android:id="@+id/roleRadioGroup"
+            <RadioGroup android:id="@+id/Role_RadioGroup"
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -177,14 +186,14 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Customer"
+                    android:text="@string/text_customer"
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:id="@+id/customer_radiobtn"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Vendor"
+                    android:text="@string/text_vendor"
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:id="@+id/vendor_radiobtn"/>
@@ -193,12 +202,12 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Register"
-                android:id="@+id/registerbtn"
+                android:text="@string/text_register"
+                android:id="@+id/Register_button"
                 android:layout_gravity="center_horizontal"
                 android:background="#02bbd2"
                 android:layout_marginBottom="10dp"
-                android:layout_below="@id/roleRadioGroup"/>
+                android:layout_below="@id/Role_RadioGroup"/>
             </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
