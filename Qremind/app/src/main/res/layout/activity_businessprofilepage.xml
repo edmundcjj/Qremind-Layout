@@ -16,7 +16,6 @@
                 android:src="@drawable/unknown_building"
                 android:layout_width="150sp"
                 android:layout_height="150sp"
-                android:layout_weight="0.26"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
                 android:layout_alignParentTop="true"
@@ -27,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/text_shop_name"
+                android:textColor="@color/black"
                 android:layout_below="@+id/businessProf_picture"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -45,6 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/text_category"
+                android:textColor="@color/black"
                 android:layout_below="@+id/businessProf_shopName_ET"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/text_location"
+                android:textColor="@color/black"
                 android:layout_below="@+id/businessProf_category_ET"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -81,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/text_email"
+                android:textColor="@color/black"
                 android:layout_below="@+id/businessProf_location_ET"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -90,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_vendor_email"
                 android:layout_gravity="center_horizontal"
+                android:inputType="textEmailAddress"
                 android:layout_below="@+id/businessProf_email_TV"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -99,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/text_telephone"
+                android:textColor="@color/black"
                 android:layout_below="@+id/businessProf_email_ET"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
@@ -112,17 +117,27 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
 
-            <Button android:id="@+id/savebtn"
-                android:layout_width="wrap_content"
+            <Button android:id="@+id/businessprofile_updatebtn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:text="@string/text_update"
                 android:layout_gravity="center_horizontal"
                 android:background="#02bbd2"
                 android:clickable="true"
                 android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/businessProf_telephone_ET"/>
+
+            <Button android:id="@+id/businessprofile_logoutbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_logout"
+                android:background="#FF3232"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/businessProf_telephone_ET"/>
+                android:layout_below="@id/businessprofile_updatebtn"/>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

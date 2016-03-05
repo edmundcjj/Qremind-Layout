@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Currently Serving"
+        android:text="@string/text_currently_serving"
         android:id="@+id/currentserving_textView"
         android:layout_gravity="center_horizontal"
         android:layout_above="@+id/currentlyserving_editText"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Your Queue No"
+        android:text="@string/text_your_queue_no"
         android:id="@+id/queuenumber_textView"
         android:layout_gravity="center_horizontal"
         android:layout_above="@+id/queuenumber_editText"
@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Estimated Waiting Time"
+        android:text="@string/text_estimated_waiting_time"
         android:id="@+id/waitingtime_textView"
         android:layout_gravity="center_horizontal"
         android:layout_above="@+id/waitingtime_editText"
@@ -39,7 +39,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Refresh"
+        android:text="@string/text_refresh"
         android:id="@+id/refreshbtn"
         android:layout_gravity="center_horizontal"
         android:background="#02bbd2"
@@ -50,7 +50,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10 mins time extension"
+        android:text="@string/text_10_mins_time_extension"
         android:id="@+id/timeextensionbtn"
         android:layout_gravity="center_horizontal"
         android:background="#02bbd2"
@@ -61,6 +61,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:id="@+id/waitingtime_editText"
         android:layout_above="@+id/refreshbtn"
         android:layout_centerHorizontal="true"/>
@@ -69,6 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/queuenumber_editText"
+        android:inputType="number"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
@@ -76,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/currentlyserving_editText"
+        android:inputType="number"
         android:layout_above="@+id/queuenumber_textView"
         android:layout_centerHorizontal="true"/>
 
@@ -87,16 +90,26 @@
         android:layout_above="@+id/currentserving_textView"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp"
-        android:text="Vendor Name"/>
+        android:text="Vendor Name(to be changed)"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Claim"
-        android:id="@+id/claimbtn"
+        android:text="@string/text_claim"
+        android:id="@+id/currentserving_claimbtn"
         android:layout_alignTop="@+id/queuenumber_textView"
         android:layout_toRightOf="@+id/currentserving_textView"
         android:layout_toEndOf="@+id/currentserving_textView"
         android:background="#02bbd2"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_logout"
+        android:id="@+id/currentserving_logoutbtn"
+        android:background="#FF3232"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>

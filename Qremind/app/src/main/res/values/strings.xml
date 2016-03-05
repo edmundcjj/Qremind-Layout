@@ -40,6 +40,26 @@
     <string name="text_location">Location</string>
     <string name="text_telephone">Telephone</string>
     <string name="text_logout">Logout</string>
+    <string name="text_login">Log In</string>
+    <string name="text_create_account">Create Account</string>
+    <string name="text_allow">Allow</string>
+    <string name="text_require_for_time_extension">Queue no request for time extension</string>
+    <string name="text_next">Next</string>
+    <string name="text_current_queue_number">Current Queue No.</string>
+    <string name="text_number_of_people_served">No. of people served</string>
+    <string name="text_number_of_people_in_queue">No. of people in Queue</string>
+    <string name="text_new_queue">New Queue</string>
+    <string name="text_please_rate_service">Wait before you go, please rate the service</string>
+    <string name="text_claim">Claim</string>
+    <string name="text_currently_serving">Currently Serving</string>
+    <string name="text_your_queue_no">Your Queue No</string>
+    <string name="text_estimated_waiting_time">Estimated Waiting Time</string>
+    <string name="text_refresh">Refresh</string>
+    <string name="text_10_mins_time_extension">10 mins time extension</string>
+    <string name="text_get_queue">Get Queue</string>
+    <string name="text_ratings">Ratings</string>
+    <string name="text_manage_queue">Manage Queue</string>
+    <string name="text_settings">Settings</string>
 
     <!-- Firebase URL Links -->
     <string name="fb_main_link">https://qremind1.firebaseio.com</string>

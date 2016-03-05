@@ -8,7 +8,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="@string/text_login"
         android:id="@+id/loginbtn"
         android:layout_gravity="center_horizontal"
         android:clickable="true"
@@ -21,7 +21,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="@string/text_create_account"
         android:id="@+id/createacctbtn"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="36dp"
