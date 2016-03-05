@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageView5"
-                android:hint="@string/prompt_email"
+                android:hint="@string/hint_email_hp_no"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -43,21 +43,21 @@
                 android:id="@+id/password_login_ET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/prompt_password"
+                android:hint="@string/hint_password"
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:layout_below="@+id/email_login_ET"
-                android:layout_marginBottom="30dp"/>
+                android:layout_marginBottom="25dp"/>
 
             <Button
                 android:id="@+id/cust_login_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/password_login_ET"
-                android:text="@string/action_sign_in_cust"
+                android:text="@string/text_cust_login"
                 android:textStyle="bold"
                 android:background="#02bbd2"
                 android:layout_marginBottom="15dp"/>
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cust_login_btn"
-                android:text="@string/action_sign_in_vendor"
+                android:text="@string/text_vendor_login"
                 android:textStyle="bold"
                 android:background="#02bbd2" />
 

@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/paxnumber_editText"
-        android:hint="@string/pax_number"
+        android:hint="@string/text_pax_number"
         android:layout_gravity="center_horizontal"
         android:layout_above="@+id/getqueuebtn"
         android:layout_alignParentLeft="true"

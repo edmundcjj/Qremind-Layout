@@ -2,14 +2,6 @@
     <string name="app_name">Qremind</string>
 
     <!-- Strings -->
-    <string name="prompt_email">Email/Hp No</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in_cust">Customer Login</string>
-    <string name="action_sign_in_vendor">Vendor Login</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
@@ -26,8 +18,11 @@
     <string name="hint_email">something@xxxxx.com</string>
     <string name="hint_password">Enter your password</string>
     <string name="hint_confirmpassword">Confirm Password</string>
+    <string name="hint_email_hp_no">Email/Hp No</string>
 
     <!-- text string -->
+    <string name="text_cust_login">Customer Login</string>
+    <string name="text_vendor_login">Vendor Login</string>
     <string name="text_pax_number">No. of pax</string>
     <string name="text_first_name">First Name</string>
     <string name="text_last_name">Last Name</string>
@@ -40,6 +35,11 @@
     <string name="text_role">Role</string>
     <string name="text_register">Register</string>
     <string name="text_update">Update</string>
+    <string name="text_shop_name">Shop Name</string>
+    <string name="text_category">Category</string>
+    <string name="text_location">Location</string>
+    <string name="text_telephone">Telephone</string>
+    <string name="text_logout">Logout</string>
 
     <!-- Firebase URL Links -->
     <string name="fb_main_link">https://qremind1.firebaseio.com</string>

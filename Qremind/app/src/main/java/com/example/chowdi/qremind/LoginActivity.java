@@ -21,15 +21,19 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +75,16 @@ public class LoginActivity extends AppCompatActivity {
         // Initialise Firebase library with android context once before any Firebase reference is created or used
         Firebase.setAndroidContext(getApplicationContext());
 
+        // Check if there is already an authorisation for firebase which the user application have logged in previously
+        fbRef = new Firebase(getString(R.string.fb_main_link));
+        // if there is valid authorisation, redirect to next activity
+        if(fbRef.getAuth() != null)
+        {
+            Intent intent = new Intent(LoginActivity.this, CustomerProfilePageActivity.class);
+            startActivity(intent);
+            LoginActivity.this.finish();
+        }
+
         // Initialise all UI elements first
         initialiseUIElements();
 
@@ -81,16 +95,15 @@ public class LoginActivity extends AppCompatActivity {
                 String loginID = emailPhoneNoET.getText().toString();
                 String password = passwordET.getText().toString();
 
-                if(isEmailString(loginID)){
+                if (isEmptyString(loginID)) {
                     emailPhoneNoET.setError("LoginID cannot be empty!");
                     return;
                 }
-                if(isEmailString(password)){
+                if (isEmptyString(password)) {
                     passwordET.setError("Password cannot be empty!");
                     return;
                 }
-                if(!validateLoginID(loginID))
-                {
+                if (!validateLoginID(loginID)) {
                     emailPhoneNoET.setError("Please provide valid email or phone no!");
                     showToastMessage("Please provide valid email or phone no!");
                     return;
@@ -100,6 +113,40 @@ public class LoginActivity extends AppCompatActivity {
 
                 setEnableAllElements(false);
                 customerLogin(loginID, password);
+            }
+        });
+        // add and implement text changed listener to email edit text
+        passwordET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                passwordET.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        // add and implement text changed listener to email edit text
+        emailPhoneNoET.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                emailPhoneNoET.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
     }
@@ -132,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
                     if(dataSnapshot.getValue() == null) {
                         emailPhoneNoET.setError("Phone No does not exists");
                         showToastMessage("Phone No does not exists");
+                        setEnableAllElements(true);
                     }
                     else
                     {
@@ -142,6 +190,7 @@ public class LoginActivity extends AppCompatActivity {
                                 final SharedPreferences.Editor editor = prefs.edit();
                                 editor.putString("email", dataSnapshot.child("email").getValue().toString());
                                 editor.putString("phoneNo", loginID);
+                                editor.commit();
                                 Intent intent = new Intent(LoginActivity.this, CustomerProfilePageActivity.class);
                                 startActivity(intent);
                                 LoginActivity.this.finish();
@@ -149,16 +198,69 @@ public class LoginActivity extends AppCompatActivity {
 
                             @Override
                             public void onAuthenticationError(FirebaseError firebaseError) {
-
+                                switch (firebaseError.getCode())
+                                {
+                                    case FirebaseError.INVALID_PASSWORD:
+                                        passwordET.setError("Password is invalid!");
+                                        showToastMessage("Password is invalid!");
+                                        break;
+                                }
                             }
                         });
                     }
-                    setEnableAllElements(true);
                 }
 
                 @Override
                 public void onCancelled(FirebaseError firebaseError) {
+                }
+            });
+        }
+        else if(isEmailString(loginID))
+        {
+            fbRef.authWithPassword(loginID, password, new Firebase.AuthResultHandler() {
+                @Override
+                public void onAuthenticated(AuthData authData) {
+                    fbRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for(DataSnapshot ds : dataSnapshot.getChildren())
+                            {
+                                if(ds.child("email").getValue().toString().equals(loginID))
+                                {
+                                    prefs = getSharedPreferences(getString(R.string.shared_pref_main),MODE_PRIVATE);
+                                    final SharedPreferences.Editor editor = prefs.edit();
+                                    editor.putString("email", loginID);
+                                    editor.putString("phoneNo", ds.child("phoneno").getValue().toString());
+                                    editor.commit();
+                                    Intent intent = new Intent(LoginActivity.this, CustomerProfilePageActivity.class);
+                                    startActivity(intent);
+                                    LoginActivity.this.finish();
+                                    return;
+                                }
+                            }
+                        }
 
+                        @Override
+                        public void onCancelled(FirebaseError firebaseError) {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onAuthenticationError(FirebaseError firebaseError) {
+                    switch (firebaseError.getCode())
+                    {
+                        case FirebaseError.INVALID_PASSWORD:
+                            passwordET.setError("Password is invalid!");
+                            showToastMessage("Password is invalid!");
+                            break;
+                        case FirebaseError.USER_DOES_NOT_EXIST:
+                            emailPhoneNoET.setError("Email does not exist!");
+                            showToastMessage("Email does not exist!");
+                            break;
+                    }
+                    setEnableAllElements(true);
                 }
             });
         }
@@ -221,7 +323,7 @@ public class LoginActivity extends AppCompatActivity {
      * Check if str is empty
      * @return true if empty, else false for non-empty
      */
-    private Boolean isEmptyField(String value)
+    private Boolean isEmptyString(String value)
     {
         if(TextUtils.isEmpty(value)) {
             return true;
